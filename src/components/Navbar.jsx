@@ -11,7 +11,7 @@ export default function Navbar({ onOpenAuth, onOpenAdminAuth }) {
         <a href="#" className="logo" onClick={(e) => { e.preventDefault(); }} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
           <img 
             src="/logo.jpg" 
-            alt="Amit Sir Coaching Logo" 
+            alt="Pillars Coaching Classes Logo" 
             style={{ 
               width: '38px', 
               height: '38px', 
@@ -20,7 +20,7 @@ export default function Navbar({ onOpenAuth, onOpenAdminAuth }) {
               objectFit: 'cover'
             }} 
           />
-          <span style={{ fontWeight: 800 }}>Amit Sir Coaching</span>
+          <span style={{ fontWeight: 800 }}>Pillars Coaching Classes</span>
         </a>
 
         <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>

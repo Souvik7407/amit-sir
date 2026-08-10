@@ -57,7 +57,7 @@ export default function AdminAuthModal({ isOpen, onClose }) {
         <div style={{ textAlign: 'center', marginBottom: '28px' }}>
           <img 
             src="/logo.jpg" 
-            alt="Amit Sir Coaching Logo" 
+            alt="Pillars Coaching Classes Logo" 
             style={{ 
               width: '56px', 
               height: '56px', 
@@ -69,7 +69,7 @@ export default function AdminAuthModal({ isOpen, onClose }) {
             }} 
           />
           <h2 style={{ fontSize: '1.6rem', fontWeight: 800, margin: '0 0 6px 0' }}>Instructor Portal</h2>
-          <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Authorized access only for Amit Sir Coaching console.</p>
+          <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Authorized access only for Pillars Coaching Classes console.</p>
         </div>
 
         {error && (

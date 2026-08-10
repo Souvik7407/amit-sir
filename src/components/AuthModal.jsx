@@ -93,7 +93,7 @@ export default function AuthModal({ isOpen, onClose }) {
               style={{ width: '40px', height: '40px', marginBottom: '12px' }} 
             />
             <h3 style={{ fontSize: '1.25rem' }}>Choose an account</h3>
-            <p style={{ fontSize: '0.85rem' }}>to continue to Amit Sir Coaching</p>
+            <p style={{ fontSize: '0.85rem' }}>to continue to Pillars Coaching Classes</p>
           </div>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
@@ -159,7 +159,7 @@ export default function AuthModal({ isOpen, onClose }) {
           <div style={{ textAlign: 'center', marginBottom: '32px' }}>
             <img 
               src="/logo.jpg" 
-              alt="Amit Sir Coaching Logo" 
+              alt="Pillars Coaching Classes Logo" 
               style={{ 
                 width: '54px', 
                 height: '54px', 

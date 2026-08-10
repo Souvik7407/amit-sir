@@ -44,13 +44,13 @@ export default function StudentHome({ onSelectCourse, onOpenAuth, onOpenAdminAut
             marginBottom: '16px',
             display: 'inline-block'
           }}>
-            🎯 Elite Math Coaching Center
+            🎯 Pillars Coaching Classes
           </span>
           <h1 className="hero-title" style={{ margin: '0 auto 20px auto' }}>
-            Crack JEE & Board Mathematics With Confidence
+            Kindle the Spark in Yourself
           </h1>
           <p className="hero-subtitle" style={{ margin: '0 auto 32px auto' }}>
-            Join Amit Sir's batch courses, participate in interactive live video classes, download standard sheets, and resolve doubts instantly.
+            Crack JEE & Board Mathematics with specialist mentorship. Join expert interactive live classes, download standard formulas sheets, and resolve doubts instantly.
           </p>
 
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
@@ -294,7 +294,7 @@ export default function StudentHome({ onSelectCourse, onOpenAuth, onOpenAdminAut
         color: 'var(--text-secondary)' 
       }}>
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
-          <span>© 2026 Amit Sir Mathematics Coaching. All rights reserved.</span>
+          <span>© 2026 Pillars Coaching Classes. All rights reserved.</span>
           <div style={{ display: 'flex', gap: '20px' }}>
             <a 
               href="#" 
