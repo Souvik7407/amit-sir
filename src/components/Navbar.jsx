@@ -8,9 +8,19 @@ export default function Navbar({ onOpenAuth, onOpenAdminAuth }) {
   return (
     <nav className="navbar">
       <div className="container navbar-container">
-        <a href="#" className="logo" onClick={(e) => { e.preventDefault(); }}>
-          <BookOpen className="text-primary" size={28} style={{ strokeWidth: 2.5, color: '#6366f1' }} />
-          <span>Amit Sir Coaching</span>
+        <a href="#" className="logo" onClick={(e) => { e.preventDefault(); }} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <img 
+            src="/logo.jpg" 
+            alt="Amit Sir Coaching Logo" 
+            style={{ 
+              width: '38px', 
+              height: '38px', 
+              borderRadius: '50%', 
+              border: '2px solid var(--primary)',
+              objectFit: 'cover'
+            }} 
+          />
+          <span style={{ fontWeight: 800 }}>Amit Sir Coaching</span>
         </a>
 
         <div className="nav-links" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>

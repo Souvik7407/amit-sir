@@ -157,6 +157,19 @@ export default function AuthModal({ isOpen, onClose }) {
           </button>
 
           <div style={{ textAlign: 'center', marginBottom: '32px' }}>
+            <img 
+              src="/logo.jpg" 
+              alt="Amit Sir Coaching Logo" 
+              style={{ 
+                width: '54px', 
+                height: '54px', 
+                borderRadius: '50%', 
+                border: '2px solid var(--primary)',
+                marginBottom: '16px',
+                objectFit: 'cover',
+                display: 'inline-block'
+              }} 
+            />
             <h2 style={{ fontSize: '1.75rem', marginBottom: '8px' }}>Welcome Back</h2>
             <p style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>Start boosting your mathematics score today.</p>
           </div>

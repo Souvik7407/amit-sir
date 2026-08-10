@@ -55,20 +55,19 @@ export default function AdminAuthModal({ isOpen, onClose }) {
         </button>
 
         <div style={{ textAlign: 'center', marginBottom: '28px' }}>
-          <div style={{ 
-            width: '56px', 
-            height: '56px', 
-            borderRadius: '50%', 
-            background: 'rgba(125, 204, 173, 0.1)', 
-            border: '1px solid var(--primary)',
-            display: 'inline-flex', 
-            alignItems: 'center', 
-            justifyContent: 'center', 
-            marginBottom: '16px',
-            color: 'var(--primary)'
-          }}>
-            <KeyRound size={26} />
-          </div>
+          <img 
+            src="/logo.jpg" 
+            alt="Amit Sir Coaching Logo" 
+            style={{ 
+              width: '56px', 
+              height: '56px', 
+              borderRadius: '50%', 
+              border: '2px solid var(--primary)',
+              marginBottom: '16px',
+              objectFit: 'cover',
+              display: 'inline-block'
+            }} 
+          />
           <h2 style={{ fontSize: '1.6rem', fontWeight: 800, margin: '0 0 6px 0' }}>Instructor Portal</h2>
           <p style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Authorized access only for Amit Sir Coaching console.</p>
         </div>
