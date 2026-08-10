@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useApp } from '../context/AppContext';
-import { BookOpen, Users, Star, ArrowRight, ShieldCheck, CheckCircle } from 'lucide-react';
+import { BookOpen, Users, Star, ArrowRight, ShieldCheck, CheckCircle, MapPin, Mail } from 'lucide-react';
 import PaymentModal from '../components/PaymentModal';
 
 export default function StudentHome({ onSelectCourse, onOpenAuth, onOpenAdminAuth }) {
@@ -287,19 +287,101 @@ export default function StudentHome({ onSelectCourse, onOpenAuth, onOpenAdminAut
 
       <footer style={{ 
         borderTop: '1px solid var(--border-color)', 
-        padding: '30px 0', 
-        marginTop: '60px', 
-        textAlign: 'center', 
-        fontSize: '0.8rem', 
-        color: 'var(--text-secondary)' 
+        padding: '50px 0 30px 0', 
+        marginTop: '80px', 
+        background: 'rgba(0,0,0,0.15)',
+        fontSize: '0.85rem', 
+        color: 'var(--text-secondary)',
+        textAlign: 'left'
       }}>
-        <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }}>
-          <span>© 2026 Pillars Coaching Classes. All rights reserved.</span>
+        <div className="container" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '40px', marginBottom: '40px' }}>
+          
+          {/* Brand Col */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+              <img 
+                src="/logo.jpg" 
+                alt="Logo" 
+                style={{ width: '36px', height: '36px', borderRadius: '50%', border: '1.5px solid var(--primary)', objectFit: 'cover' }} 
+              />
+              <span style={{ fontWeight: 800, fontSize: '1.1rem', color: 'var(--text-primary)' }}>Pillars Coaching</span>
+            </div>
+            <p style={{ fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.5', margin: 0 }}>
+              "Kindle the spark in yourself"<br />
+              Expert mathematical training for JEE Mains, Advanced, and Class 12 Boards.
+            </p>
+          </div>
+
+          {/* Contact Col */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+            <h4 style={{ fontWeight: 700, color: 'var(--text-primary)', margin: 0, textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '0.05em' }}>
+              Contact Information
+            </h4>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+              <div style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
+                <MapPin size={16} style={{ color: 'var(--primary)', flexShrink: 0, marginTop: '2px' }} />
+                <span>Alipurduar, West Bengal, India</span>
+              </div>
+              <a 
+                href="mailto:pillarscoachingclasses@gmail.com" 
+                style={{ display: 'flex', gap: '10px', alignItems: 'center', color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s' }}
+                className="footer-email-link"
+              >
+                <Mail size={16} style={{ color: 'var(--primary)', flexShrink: 0 }} />
+                <span>pillarscoachingclasses@gmail.com</span>
+              </a>
+            </div>
+          </div>
+
+          {/* Callback Request Col */}
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+            <h4 style={{ fontWeight: 700, color: 'var(--text-primary)', margin: 0, textTransform: 'uppercase', fontSize: '0.8rem', letterSpacing: '0.05em' }}>
+              Request a Callback
+            </h4>
+            <p style={{ fontSize: '0.75rem', color: 'var(--text-secondary)', margin: 0 }}>
+              Enter your number and our advisor will call you.
+            </p>
+            <form 
+              onSubmit={(e) => { 
+                e.preventDefault(); 
+                const phone = e.target.elements.callbackPhone.value;
+                if(phone) {
+                  alert(`Thank you! Callback request received for ${phone}. Pillars Coaching Classes will contact you shortly.`);
+                  e.target.reset();
+                }
+              }} 
+              style={{ display: 'flex', gap: '8px' }}
+            >
+              <input 
+                type="tel" 
+                name="callbackPhone"
+                required
+                placeholder="Phone Number" 
+                pattern="[0-9]{10}"
+                maxLength={10}
+                className="form-input" 
+                style={{ padding: '8px 12px', fontSize: '0.8rem', flex: 1, borderRadius: '8px' }}
+              />
+              <button 
+                type="submit" 
+                className="btn btn-primary" 
+                style={{ padding: '8px 16px', fontSize: '0.75rem', borderRadius: '8px' }}
+              >
+                Request
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+        {/* Copyright Area */}
+        <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: '24px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '16px' }} className="container">
+          <span style={{ fontSize: '0.75rem', color: 'var(--text-secondary)' }}>© 2026 Pillars Coaching Classes. All rights reserved.</span>
           <div style={{ display: 'flex', gap: '20px' }}>
             <a 
               href="#" 
               onClick={(e) => { e.preventDefault(); onOpenAdminAuth(); }} 
-              style={{ color: 'var(--primary)', textDecoration: 'none', fontWeight: 600 }}
+              style={{ color: 'var(--primary)', textDecoration: 'none', fontWeight: 600, fontSize: '0.75rem' }}
               className="footer-admin-link"
             >
               Instructor Administration Login
