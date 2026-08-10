@@ -596,9 +596,27 @@ p {
 /* Mobile-responsive Layout Classes */
 .classroom-grid {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: 3fr 1.2fr;
+  grid-template-areas:
+    "player playlist"
+    "doubts notes"
+    "doubts formulas";
   gap: 30px;
   align-items: start;
+}
+
+.class-player { grid-area: player; }
+.class-playlist { grid-area: playlist; }
+.class-doubts { grid-area: doubts; }
+.class-notes { grid-area: notes; }
+.class-formulas { grid-area: formulas; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  text-align: left;
 }
 
 .video-layout-grid {
@@ -630,11 +648,21 @@ p {
 @media (max-width: 1024px) {
   .classroom-grid {
     grid-template-columns: 1fr;
+    grid-template-areas:
+      "player"
+      "playlist"
+      "notes"
+      "formulas"
+      "doubts";
     gap: 24px;
   }
 }
 
 @media (max-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
   .hero {
     padding: 40px 0 30px;
   }

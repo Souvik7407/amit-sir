@@ -6,17 +6,17 @@ import { useApp } from '../context/AppContext';
 
 const courseNotesData = {
   'jee-calc-101': [
-    { title: 'Standard Calculus Integrals', content: '∫ xⁿ dx = (xⁿ⁺¹)/(n+1) + C,  n ≠ -1\n∫ eˣ dx = eˣ + C\n∫ (1/x) dx = ln|x| + C' },
-    { title: 'Integration By Parts (ILATE)', content: '∫ u dv = u·v - ∫ v du\nPriority: Inverse, Log, Algebra, Trig, Expo' },
-    { title: 'Standard Limits & Derivatives', content: 'lim (x→0) (sin x)/x = 1\nlim (x→0) (eˣ - 1)/x = 1\nd/dx (ln x) = 1/x' }
+    { title: 'Standard Calculus Integrals', content: '∫ x\u207F dx = (x\u207F\u207A\u00B9)/(n+1) + C,  n \u2260 -1\n∫ e\u02E3 dx = e\u02E3 + C\n∫ (1/x) dx = ln|x| + C' },
+    { title: 'Integration By Parts (ILATE)', content: '∫ u dv = u\u00B7v - ∫ v du\nPriority: Inverse, Log, Algebra, Trig, Expo' },
+    { title: 'Standard Limits & Derivatives', content: 'lim (x\u21920) (sin x)/x = 1\nlim (x\u21920) (e\u02E3 - 1)/x = 1\nd/dx (ln x) = 1/x' }
   ],
   'boards-matrix-12': [
-    { title: 'Matrix Algebra & Determinants', content: 'Matrix Inverse: A⁻¹ = adj(A) / |A|,  |A| ≠ 0\nTranspose rules: (AB)ᵀ = Bᵀ Aᵀ' },
-    { title: 'Adjoint Properties', content: 'A · adj(A) = adj(A) · A = |A| · I\n|adj(A)| = |A|ⁿ⁻¹ where n is order' }
+    { title: 'Matrix Algebra & Determinants', content: 'Matrix Inverse: A\u207B\u00B9 = adj(A) / |A|,  |A| \u2260 0\nTranspose rules: (AB)\u1D40 = B\u1D40 A\u1D40' },
+    { title: 'Adjoint Properties', content: 'A \u00B7 adj(A) = adj(A) \u00B7 A = |A| \u00B7 I\n|adj(A)| = |A|\u207F\u207B\u00B9 where n is order' }
   ],
   'olympiad-algebra': [
-    { title: 'Theory of Equations (Vieta\'s)', content: 'For ax² + bx + c = 0:\n  α + β = -b/a\n  αβ = c/a' },
-    { title: 'Classic Inequalities', content: 'AM-GM: (a+b)/2 ≥ √(ab),  a,b ≥ 0\nCauchy-Schwarz: (∑ aᵢbᵢ)² ≤ (∑ aᵢ²)(∑ bᵢ²)' }
+    { title: 'Theory of Equations (Vieta\'s)', content: 'For ax\u00B2 + bx + c = 0:\n  \u03B1 + \u03B2 = -b/a\n  \u03B1\u03B2 = c/a' },
+    { title: 'Classic Inequalities', content: 'AM-GM: (a+b)/2 \u2265 \u221A(ab),  a,b \u2265 0\nCauchy-Schwarz: (\u2211 a\u2089b\u2089)\u00B2 \u2265 (\u2211 a\u2089\u00B2)(\u2211 b\u2089\u00B2)' }
   ]
 };
 
@@ -75,24 +75,16 @@ export default function CourseView({ courseId, onBack }) {
         <p style={{ color: 'var(--text-secondary)', maxWidth: '800px', fontSize: '0.95rem' }}>{course.description}</p>
       </div>
 
-      {/* Main Grid: Player on left, Syllabus/Playlist on right */}
+      {/* Main Grid: Reorders elements dynamically on Mobile using grid area templates */}
       <div className="classroom-grid">
         
-        {/* Left Column: Player & Doubt Panel */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '40px' }}>
-          
-          {/* Custom Video Player component */}
+        {/* Video Player */}
+        <div className="class-player">
           <VideoPlayer activeLecture={activeLecture} />
-          
-          {/* Doubt typing box and history */}
-          <DoubtSection courseId={course.id} courseTitle={course.title} />
-
         </div>
 
-        {/* Right Column: Interactive Classroom Playlist & Sheets */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-          
-          {/* Playlist */}
+        {/* Playlist */}
+        <div className="class-playlist">
           <div className="card-glass" style={{ padding: '20px' }}>
             <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
               <BookOpen size={16} style={{ color: 'var(--primary)' }} />
@@ -155,8 +147,10 @@ export default function CourseView({ courseId, onBack }) {
               )}
             </div>
           </div>
+        </div>
 
-          {/* Sheets and Study Materials (Extra premium feature to enrich app) */}
+        {/* Sheets and Study Materials */}
+        <div className="class-notes">
           <div className="card-glass" style={{ padding: '20px' }}>
             <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
               <FileText size={16} style={{ color: 'var(--accent)' }} />
@@ -204,8 +198,10 @@ export default function CourseView({ courseId, onBack }) {
               </a>
             </div>
           </div>
+        </div>
 
-          {/* Quick Study Math Formulas Notes */}
+        {/* Quick Study Math Formulas Notes */}
+        <div className="class-formulas">
           <div className="card-glass" style={{ padding: '20px' }}>
             <h3 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '16px', display: 'flex', alignItems: 'center', gap: '8px' }}>
               <FileText size={16} style={{ color: 'var(--primary)' }} />
@@ -251,7 +247,11 @@ export default function CourseView({ courseId, onBack }) {
               )}
             </div>
           </div>
+        </div>
 
+        {/* Doubt Panel */}
+        <div className="class-doubts">
+          <DoubtSection courseId={course.id} courseTitle={course.title} />
         </div>
 
       </div>

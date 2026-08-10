@@ -75,7 +75,7 @@ export default function StudentHome({ onSelectCourse, onOpenAuth, onOpenAdminAut
 
           <div style={{ 
             display: 'grid', 
-            gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', 
+            gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', 
             gap: '30px' 
           }}>
             {courses.map((course) => {
@@ -211,7 +211,7 @@ export default function StudentHome({ onSelectCourse, onOpenAuth, onOpenAdminAut
 
       {/* About Section */}
       <section id="about" style={{ padding: '60px 0 20px', borderTop: '1px solid var(--border-color)' }}>
-        <div className="container" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '40px', alignItems: 'center', textAlign: 'left' }}>
+        <div className="container about-grid">
           <div>
             <h2 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '16px' }}>Learn from the Specialist</h2>
             <p style={{ marginBottom: '20px' }}>
